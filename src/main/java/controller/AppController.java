@@ -70,7 +70,7 @@ public class AppController {
 
 	    @RequestMapping(value="/upload", method=RequestMethod.POST)
 	    public @ResponseBody String handleFileUpload(/*@RequestParam("name") String name,*/
-	            @RequestParam("file") MultipartFile file){
+	            @RequestParam("files") MultipartFile file){
 	    	String name="ArpitKhare.log";
 	        if (!file.isEmpty()) {
 	            try {
