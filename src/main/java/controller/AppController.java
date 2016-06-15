@@ -44,7 +44,7 @@ public class AppController {
 					+ "and would respond with the recommendations</font></p><p>- akhare@hortonworks.com</p>";
 		}
 		
-		
+		@CrossOrigin(origins = "*")
 		@RequestMapping(value="/downloadLogFile",method=RequestMethod.GET	)
 		public void getLogFile(HttpSession session,HttpServletResponse response) throws Exception {
 		    try {
@@ -62,12 +62,14 @@ public class AppController {
 		    }
 
 		}
-			    
+		
+		@CrossOrigin(origins = "*")	    
 	    @RequestMapping(value="/upload", method=RequestMethod.GET)
 	    public @ResponseBody String provideUploadInfo() {
 	        return "You can upload a file by posting to this same URL.";
 	    }
-
+		
+		@CrossOrigin(origins = "*")
 	    @RequestMapping(value="/upload", method=RequestMethod.POST)
 	    public @ResponseBody String handleFileUpload(/*@RequestParam("name") String name,*/
 	            @RequestParam("files") MultipartFile file){
