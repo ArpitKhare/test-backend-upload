@@ -73,7 +73,7 @@ public class AppController {
 		@CrossOrigin(origins = "*")
 	    @RequestMapping(value="/upload", method=RequestMethod.POST, consumes = {"multipart/form-data"})
 	    public @ResponseBody String handleFileUpload(/*@RequestParam("name") String name,*/
-	            @RequestPart("files") MultipartFile file){
+	            @RequestParam("files") MultipartFile file){
 	    	String name="ArpitKhare.log";
 	        if (!file.isEmpty()) {
 	            try {
