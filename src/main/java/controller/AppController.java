@@ -62,12 +62,16 @@ public class AppController {
 		    }
 
 		}
-		
+			    
+	    @RequestMapping(value="/upload", method=RequestMethod.GET)
+	    public @ResponseBody String provideUploadInfo() {
+	        return "You can upload a file by posting to this same URL.";
+	    }
 
 	    @RequestMapping(value="/upload", method=RequestMethod.POST)
-	    public @ResponseBody String handleFileUpload(//@RequestParam("name") String name,
+	    public @ResponseBody String handleFileUpload(/*@RequestParam("name") String name,*/
 	            @RequestParam("file") MultipartFile file){
-	    	String name="Arpit.log";// remove this
+	    	String name="ArpitKhare.log";
 	        if (!file.isEmpty()) {
 	            try {
 	                byte[] bytes = file.getBytes();
@@ -83,7 +87,6 @@ public class AppController {
 	            return "You failed to upload " + name + " because the file was empty.";
 	        }
 	    }
-
 	    
 		
 
